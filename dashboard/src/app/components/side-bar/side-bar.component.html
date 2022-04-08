@@ -1,0 +1,7 @@
+<div class="sidebar left">
+    <a class="navbar-brand" [routerLink]="['/doctors-view', doctorid]">Logo</a>
+    <div class="alert alert-info text-dark mx-1">Patient List</div>
+    <ul *ngFor="let patient of patientData">
+        <li><a routerLinkActive="active-patient" style="cursor: pointer;" (click)="onGetingPatientDetails(patient.id)">{{ patient.fname + ' ' + patient?.lname }}</a></li>
+    </ul>
+</div>

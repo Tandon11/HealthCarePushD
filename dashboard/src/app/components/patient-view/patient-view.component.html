@@ -1,0 +1,59 @@
+<app-side-bar></app-side-bar>
+<app-header></app-header>
+
+<div class="row pt-5 main-content-container" style="padding-bottom: 2%; border-bottom: 1px solid #d5d5d5; box-shadow: 1px 2px 2px #fcfcfc;">
+    <div class="col-sm-8">
+        <div class="alert alert-secondary">
+            Patient Details
+        </div>
+        <div class="row">
+            <div class="col-sm-6" *ngFor="let p of singlePatient | keyvalue">
+                <div class="card mb-1" style="width: 18rem;">
+                    <div class="card-body">
+                        {{p.key}}: {{p.value ? p.value : 'N/A'}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-sm-4 text-center">
+        <div class="container-align">
+            <!-- <img src="#" alt="#"> -->
+            <i class="fa fa-user" style="font-size: 200px; color: grey;"></i>
+        </div>
+    </div>
+</div>
+
+<div class="row my-3 main-content-container" style="border-bottom: 1px solid #d5d5d5; box-shadow: 1px 2px 2px #fcfcfc;">
+    <div class="col-sm-6 text-center">
+      <div class="alert alert-secondary">Patient Section Progress</div>
+      <div id="specificChart" class="donut-size">
+        <div class="pie-wrapper">
+          <span class="label">
+              <span class="num">0</span><span class="smaller">%</span>
+          </span>
+          <div class="pie">
+            <div class="left-side half-circle"></div>
+            <div class="right-side half-circle"></div>
+          </div>
+          <div class="shadow"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 text-center">
+        Graph-2
+    </div>
+    <div class="col-sm-6 text-center my-2">
+        <a routerLink="/patient-response" class="badge badge-success">Patient Response</a>
+    </div>
+</div>
+
+<div class="row mt-5" style="border-bottom: 1px solid #d5d5d5; box-shadow: 1px 2px 2px #fcfcfc;">
+    <div class="col-sm-6 text-center">
+        Graph-1
+    </div>
+    <div class="col-sm-6 text-center">
+        Graph-2
+    </div>
+</div>
