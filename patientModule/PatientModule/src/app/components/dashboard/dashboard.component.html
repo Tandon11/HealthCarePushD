@@ -1,0 +1,89 @@
+<div class="bootstrap-wrapper">
+
+    <div class = "container text-center">
+        <h1>Hello Patient</h1>
+        <p> The following are the sections to completed by you!</p>
+        
+        <button class="btn btn-primary" [disabled] = "sec_1" style="margin-left: 0px;" type="radio" (click)="section1()">Section-1</button>
+        <button class="btn btn-primary" [disabled] = "sec_2" style="margin-left: 250px;" type="button" (click)="section2()">Section-2</button>
+        <button class="btn btn-primary" [disabled] = "sec_3" style="margin-left: 250px;" type="button" (click)="section3()">Section-3</button>
+
+        <!-- <div class="questions" *ngFor="let que of questions" >
+            <span>
+                <h1>Q {{que.q_no}}) {{que.question}}</h1>
+            </span>  
+
+            <div class="btn-group" role="group" ngbRadioGroup name="radioBasic" >
+                <label ngbButtonLabel class="btn btn-primary">
+                  <input ngbButton type="radio" class="btn-check" [value]="1" (click)="answer(true)"> Yes
+                </label>
+                
+                <label ngbButtonLabel class="btn btn-primary" style="margin-left: 30px;">
+                  <input ngbButton type="radio" class="btn-check" [value]="2" (click)="answer(false)"> No
+                </label>
+            </div>
+
+        </div> -->
+<!-- ------------------------------------------------------------------------------------------------ -->
+        <div class="questions" *ngIf="submitted">
+            <span>
+                <h1>Q{{questions[0].q_no}}) {{questions[0].question}}</h1>
+            </span>  
+
+            <div class="btn-group" role="group" ngbRadioGroup name="radioBasic" >
+
+                <label ngbButtonLabel>
+                    <button class="btn btn-primary" [disabled] = "option1" style="margin-left: 0px;" type="radio" (click) = "answer(true,1)">Yes</button>
+                </label>
+                
+                <label ngbButtonLabel style="margin-left: 30px;">
+                    <button class="btn btn-primary" [disabled] = "option1" style="margin-left: 0px;" type="radio" (click) = "answer(false,1)">No</button>
+                </label>
+            </div>
+
+            <span>
+                <h1>Q{{questions[1].q_no}}) {{questions[1].question}}</h1>
+            </span>  
+
+            
+            <div class="btn-group" role="group" ngbRadioGroup name="radioBasic" >
+
+                <label ngbButtonLabel>
+                    <button class="btn btn-primary" [disabled] = "option2" style="margin-left: 0px;" type="radio" (click) = "answer(true,2)">Yes</button>
+                </label>
+                
+                <label ngbButtonLabel style="margin-left: 30px;">
+                    <button class="btn btn-primary" [disabled] = "option2" style="margin-left: 0px;" type="radio" (click) = "answer(false,2)">No</button>
+                </label>
+            </div>
+
+
+            <span>
+                <h1>Q{{questions[2].q_no}}) {{questions[2].question}}</h1>
+            </span>  
+
+            
+            <div class="btn-group" role="group" ngbRadioGroup name="radioBasic" >
+
+                <label ngbButtonLabel>
+                    <button class="btn btn-primary" [disabled] = "option3" style="margin-left: 0px;" type="radio" (click) = "answer(true,3)">Yes</button>
+                </label>
+                
+                <label ngbButtonLabel style="margin-left: 30px;">
+                    <button class="btn btn-primary" [disabled] = "option3" style="margin-left: 0px;" type="radio" (click) = "answer(false,3)">No</button>
+                </label>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+        <button *ngIf="submitted" class="btn btn-primary questions" style="margin-left: 0px;" type="button" (click)="submit()">Submit</button>
+    </div>
+
+    
+</div>
